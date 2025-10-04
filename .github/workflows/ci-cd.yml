@@ -41,7 +41,7 @@ jobs:
     - name: Update manifests repository
       env:
         MANIFESTS_REPO: https://x-access-token:${{ secrets.MANIFESTS_REPO_TOKEN }}@github.com/zilcherry100/flask-argocd-manifests.git
-        IMAGE_TAG: v0.0.0-${{ github.sha }}
+        IMAGE_TAG: ${{ github.sha }}
       run: |
         git clone $MANIFESTS_REPO manifests-repo
         cd manifests-repo
